@@ -1,0 +1,4 @@
+/home/sangwon/enc_sin/build/CMakeFiles/edit_cache.dir
+/home/sangwon/enc_sin/build/CMakeFiles/rebuild_cache.dir
+/home/sangwon/enc_sin/build/CMakeFiles/sin_he.dir
+/home/sangwon/enc_sin/build/CMakeFiles/bgv_test.dir

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sangwon/enc_sin/bgv_test.cpp
+openfhe/pke/openfhe.h
+-
+chrono
+-
+iomanip
+-
+iostream
+-
+
