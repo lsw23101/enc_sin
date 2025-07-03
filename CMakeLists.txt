@@ -1,10 +1,9 @@
-cmake_minimum_required(VERSION 3.8)
-project(enc_sin)
+cmake_minimum_required(VERSION 3.5.1)
 
-# Default to C++17 for OpenFHE
-if(NOT CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 17)
-endif()
+project(sin_he CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+option( BUILD_STATIC "Set to ON to include static versions of the library" OFF)
 
 # Global settings
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -26,8 +25,8 @@ find_package(OpenFHE REQUIRED)
 if(OpenFHE_FOUND)
     message(STATUS "Found OpenFHE")
     message(STATUS "OpenFHE Version: ${OpenFHE_VERSION}")
-    message(STATUS "OpenFHE Include Dirs: ${OPENFHE_INCLUDE_DIRS}")
-    message(STATUS "OpenFHE Libraries: ${OPENFHE_LIBRARIES}")
+    message(STATUS "OpenFHE Include Dirs: ${OpenFHE_INCLUDE_DIRS}")
+    message(STATUS "OpenFHE Libraries: ${OpenFHE_LIBRARIES}")
 else()
     message(FATAL_ERROR "OpenFHE not found")
 endif()
@@ -73,12 +72,31 @@ target_link_libraries(bgv_test
 target_compile_options(bgv_test PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
 
 # Sin HE executable
-add_executable(sin_he sin_he.cpp)
-target_include_directories(sin_he PUBLIC
+add_executable(sin_taylor sin_taylor.cpp)
+target_include_directories(sin_taylor PUBLIC
   ${OPENFHE_INCLUDE_DIRS}
 )
-target_link_libraries(sin_he
+target_link_libraries(sin_taylor
   ${OPENFHE_LINK_LIBRARIES}
   OpenMP::OpenMP_CXX
 )
-target_compile_options(sin_he PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS}) 
+target_compile_options(sin_taylor PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
+
+# Sin Euler executable
+# add_executable(sin_euler sin_euler.cpp)
+# target_include_directories(sin_euler PUBLIC
+#   ${OPENFHE_INCLUDE_DIRS}
+# )
+# target_link_libraries(sin_euler
+#   ${OPENFHE_LINK_LIBRARIES}
+#   OpenMP::OpenMP_CXX
+# )
+# target_compile_options(sin_euler PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
+
+if(BUILD_STATIC)
+    set( CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")
+    link_libraries( ${OpenFHE_STATIC_LIBRARIES} )
+else()
+    set( CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS})
+    link_libraries( ${OpenFHE_SHARED_LIBRARIES} )
+endif() 

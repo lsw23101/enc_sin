@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Set to ON to include static versions of the library
+BUILD_STATIC:BOOL=OFF
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
@@ -145,7 +148,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=enc_sin
+CMAKE_PROJECT_NAME:STATIC=sin_he
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -238,6 +241,12 @@ enc_sin_BINARY_DIR:STATIC=/home/sangwon/enc_sin/build
 
 //Value Computed by CMake
 enc_sin_SOURCE_DIR:STATIC=/home/sangwon/enc_sin
+
+//Value Computed by CMake
+sin_he_BINARY_DIR:STATIC=/home/sangwon/enc_sin/build
+
+//Value Computed by CMake
+sin_he_SOURCE_DIR:STATIC=/home/sangwon/enc_sin
 
 
 ########################
@@ -392,7 +401,7 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding OpenMP
-FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[TRUE][TRUE][c ][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[TRUE][c ][v()]
 //Details about finding OpenMP_C
 FIND_PACKAGE_MESSAGE_DETAILS_OpenMP_C:INTERNAL=[-fopenmp][/usr/lib/x86_64-linux-gnu/libdl.so][/usr/lib/gcc/x86_64-linux-gnu/9/libgomp.so][/usr/lib/x86_64-linux-gnu/libpthread.so][v()]
 //Details about finding OpenMP_CXX

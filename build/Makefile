@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/sangwon/enc_sin/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named sin_he
+# Target rules for targets named sin_taylor
 
 # Build rule for target.
-sin_he: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sin_he
-.PHONY : sin_he
+sin_taylor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sin_taylor
+.PHONY : sin_taylor
 
 # fast build rule for target.
-sin_he/fast:
-	$(MAKE) -f CMakeFiles/sin_he.dir/build.make CMakeFiles/sin_he.dir/build
-.PHONY : sin_he/fast
+sin_taylor/fast:
+	$(MAKE) -f CMakeFiles/sin_taylor.dir/build.make CMakeFiles/sin_taylor.dir/build
+.PHONY : sin_taylor/fast
 
 #=============================================================================
 # Target rules for targets named bgv_test
@@ -163,32 +163,32 @@ bgv_test.cpp.s:
 	$(MAKE) -f CMakeFiles/bgv_test.dir/build.make CMakeFiles/bgv_test.dir/bgv_test.cpp.s
 .PHONY : bgv_test.cpp.s
 
-sin_he.o: sin_he.cpp.o
+sin_taylor.o: sin_taylor.cpp.o
 
-.PHONY : sin_he.o
+.PHONY : sin_taylor.o
 
 # target to build an object file
-sin_he.cpp.o:
-	$(MAKE) -f CMakeFiles/sin_he.dir/build.make CMakeFiles/sin_he.dir/sin_he.cpp.o
-.PHONY : sin_he.cpp.o
+sin_taylor.cpp.o:
+	$(MAKE) -f CMakeFiles/sin_taylor.dir/build.make CMakeFiles/sin_taylor.dir/sin_taylor.cpp.o
+.PHONY : sin_taylor.cpp.o
 
-sin_he.i: sin_he.cpp.i
+sin_taylor.i: sin_taylor.cpp.i
 
-.PHONY : sin_he.i
+.PHONY : sin_taylor.i
 
 # target to preprocess a source file
-sin_he.cpp.i:
-	$(MAKE) -f CMakeFiles/sin_he.dir/build.make CMakeFiles/sin_he.dir/sin_he.cpp.i
-.PHONY : sin_he.cpp.i
+sin_taylor.cpp.i:
+	$(MAKE) -f CMakeFiles/sin_taylor.dir/build.make CMakeFiles/sin_taylor.dir/sin_taylor.cpp.i
+.PHONY : sin_taylor.cpp.i
 
-sin_he.s: sin_he.cpp.s
+sin_taylor.s: sin_taylor.cpp.s
 
-.PHONY : sin_he.s
+.PHONY : sin_taylor.s
 
 # target to generate assembly for a file
-sin_he.cpp.s:
-	$(MAKE) -f CMakeFiles/sin_he.dir/build.make CMakeFiles/sin_he.dir/sin_he.cpp.s
-.PHONY : sin_he.cpp.s
+sin_taylor.cpp.s:
+	$(MAKE) -f CMakeFiles/sin_taylor.dir/build.make CMakeFiles/sin_taylor.dir/sin_taylor.cpp.s
+.PHONY : sin_taylor.cpp.s
 
 # Help Target
 help:
@@ -196,16 +196,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... sin_he"
+	@echo "... edit_cache"
+	@echo "... sin_taylor"
 	@echo "... bgv_test"
 	@echo "... bgv_test.o"
 	@echo "... bgv_test.i"
 	@echo "... bgv_test.s"
-	@echo "... sin_he.o"
-	@echo "... sin_he.i"
-	@echo "... sin_he.s"
+	@echo "... sin_taylor.o"
+	@echo "... sin_taylor.i"
+	@echo "... sin_taylor.s"
 .PHONY : help
 
 
