@@ -38,7 +38,7 @@ int main() {
     std::cout << "키 생성 시간: " << keygen_time << " ms\n\n";
 
     // 테스트 데이터 준비
-    std::vector<int64_t> x = {5544};  // 테스트 값
+    std::vector<int64_t> x = {-2344};  // 테스트 값
     std::vector<int64_t> y = {5544};
 
     // 암호화 시간 측정
@@ -69,6 +69,41 @@ int main() {
     std::cout << "\n복호화된 결과:\n";
     std::cout << "X: " << decryptedX->GetPackedValue()[0] << "\n";
     std::cout << "Y: " << decryptedY->GetPackedValue()[0] << "\n";
+
+    // 음수 상수곱, 덧셈 실험
+    int64_t neg_const = -7;
+    int64_t pos_const = 3;
+    int64_t mod = 65537;
+    int64_t neg_const_mod = (neg_const < 0) ? (mod + neg_const) : neg_const;
+    auto neg_plain = cc->MakePackedPlaintext({neg_const_mod});
+    auto pos_plain = cc->MakePackedPlaintext({pos_const});
+
+    // 곱셈
+    auto ct_neg_mult = cc->EvalMult(ciphertextX, neg_plain); // -7 * x
+    auto ct_pos_mult = cc->EvalMult(ciphertextX, pos_plain); // 3 * x
+
+    // 덧셈
+    auto ct_sum = cc->EvalAdd(ct_neg_mult, ct_pos_mult); // (-7 * x) + (3 * x)
+
+    // 복호화
+    Plaintext dec_neg_mult, dec_pos_mult, dec_sum;
+    cc->Decrypt(keyPair.secretKey, ct_neg_mult, &dec_neg_mult);
+    cc->Decrypt(keyPair.secretKey, ct_pos_mult, &dec_pos_mult);
+    cc->Decrypt(keyPair.secretKey, ct_sum, &dec_sum);
+
+    int64_t v_neg = dec_neg_mult->GetPackedValue()[0];
+    int64_t v_pos = dec_pos_mult->GetPackedValue()[0];
+    int64_t v_sum = dec_sum->GetPackedValue()[0];
+
+    // centered modular 보정
+    if (v_neg > mod/2) v_neg -= mod;
+    if (v_pos > mod/2) v_pos -= mod;
+    if (v_sum > mod/2) v_sum -= mod;
+
+    std::cout << "\n[암호공간 연산 결과]" << std::endl;
+    std::cout << "-7 * x = " << v_neg << std::endl;
+    std::cout << "3 * x = " << v_pos << std::endl;
+    std::cout << "(-7 * x) + (3 * x) = " << v_sum << std::endl;
 
     // 전체 시간 계산
     auto total_time = context_time + keygen_time + enc_time + dec_time;

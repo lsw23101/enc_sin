@@ -6,9 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/sangwon/enc_sin/sin_taylor.cpp
-openfhe/pke/openfhe.h
--
+/home/sangwon/enc_sin/sin_taylor_plain.cpp
 iostream
 -
 vector
@@ -16,7 +14,5 @@ vector
 cmath
 -
 iomanip
--
-chrono
 -
 

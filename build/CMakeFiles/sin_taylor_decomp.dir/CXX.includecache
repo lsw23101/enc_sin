@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/sangwon/enc_sin/sin_taylor.cpp
+/home/sangwon/enc_sin/sin_taylor_decomp.cpp
 openfhe/pke/openfhe.h
+-
+chrono
+-
+iomanip
 -
 iostream
 -
 vector
 -
 cmath
--
-iomanip
--
-chrono
 -
 

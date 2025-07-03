@@ -93,6 +93,26 @@ target_compile_options(sin_taylor PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
 # )
 # target_compile_options(sin_euler PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
 
+add_executable(sin_taylor_decomp sin_taylor_decomp.cpp)
+target_include_directories(sin_taylor_decomp PUBLIC
+  ${OPENFHE_INCLUDE_DIRS}
+)
+target_link_libraries(sin_taylor_decomp
+  ${OPENFHE_LINK_LIBRARIES}
+  OpenMP::OpenMP_CXX
+)
+target_compile_options(sin_taylor_decomp PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
+
+add_executable(sin_taylor_plain sin_taylor_plain.cpp)
+target_include_directories(sin_taylor_plain PUBLIC
+  ${OPENFHE_INCLUDE_DIRS}
+)
+target_link_libraries(sin_taylor_plain
+  ${OPENFHE_LINK_LIBRARIES}
+  OpenMP::OpenMP_CXX
+)
+target_compile_options(sin_taylor_plain PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
+
 if(BUILD_STATIC)
     set( CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")
     link_libraries( ${OpenFHE_STATIC_LIBRARIES} )

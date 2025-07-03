@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named sin_taylor_plain
+
+# Build rule for target.
+sin_taylor_plain: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sin_taylor_plain
+.PHONY : sin_taylor_plain
+
+# fast build rule for target.
+sin_taylor_plain/fast:
+	$(MAKE) -f CMakeFiles/sin_taylor_plain.dir/build.make CMakeFiles/sin_taylor_plain.dir/build
+.PHONY : sin_taylor_plain/fast
+
+#=============================================================================
+# Target rules for targets named sin_taylor_decomp
+
+# Build rule for target.
+sin_taylor_decomp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sin_taylor_decomp
+.PHONY : sin_taylor_decomp
+
+# fast build rule for target.
+sin_taylor_decomp/fast:
+	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/build
+.PHONY : sin_taylor_decomp/fast
+
+#=============================================================================
 # Target rules for targets named sin_taylor
 
 # Build rule for target.
@@ -190,6 +216,60 @@ sin_taylor.cpp.s:
 	$(MAKE) -f CMakeFiles/sin_taylor.dir/build.make CMakeFiles/sin_taylor.dir/sin_taylor.cpp.s
 .PHONY : sin_taylor.cpp.s
 
+sin_taylor_decomp.o: sin_taylor_decomp.cpp.o
+
+.PHONY : sin_taylor_decomp.o
+
+# target to build an object file
+sin_taylor_decomp.cpp.o:
+	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/sin_taylor_decomp.cpp.o
+.PHONY : sin_taylor_decomp.cpp.o
+
+sin_taylor_decomp.i: sin_taylor_decomp.cpp.i
+
+.PHONY : sin_taylor_decomp.i
+
+# target to preprocess a source file
+sin_taylor_decomp.cpp.i:
+	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/sin_taylor_decomp.cpp.i
+.PHONY : sin_taylor_decomp.cpp.i
+
+sin_taylor_decomp.s: sin_taylor_decomp.cpp.s
+
+.PHONY : sin_taylor_decomp.s
+
+# target to generate assembly for a file
+sin_taylor_decomp.cpp.s:
+	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/sin_taylor_decomp.cpp.s
+.PHONY : sin_taylor_decomp.cpp.s
+
+sin_taylor_plain.o: sin_taylor_plain.cpp.o
+
+.PHONY : sin_taylor_plain.o
+
+# target to build an object file
+sin_taylor_plain.cpp.o:
+	$(MAKE) -f CMakeFiles/sin_taylor_plain.dir/build.make CMakeFiles/sin_taylor_plain.dir/sin_taylor_plain.cpp.o
+.PHONY : sin_taylor_plain.cpp.o
+
+sin_taylor_plain.i: sin_taylor_plain.cpp.i
+
+.PHONY : sin_taylor_plain.i
+
+# target to preprocess a source file
+sin_taylor_plain.cpp.i:
+	$(MAKE) -f CMakeFiles/sin_taylor_plain.dir/build.make CMakeFiles/sin_taylor_plain.dir/sin_taylor_plain.cpp.i
+.PHONY : sin_taylor_plain.cpp.i
+
+sin_taylor_plain.s: sin_taylor_plain.cpp.s
+
+.PHONY : sin_taylor_plain.s
+
+# target to generate assembly for a file
+sin_taylor_plain.cpp.s:
+	$(MAKE) -f CMakeFiles/sin_taylor_plain.dir/build.make CMakeFiles/sin_taylor_plain.dir/sin_taylor_plain.cpp.s
+.PHONY : sin_taylor_plain.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -197,6 +277,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... sin_taylor_plain"
+	@echo "... sin_taylor_decomp"
 	@echo "... edit_cache"
 	@echo "... sin_taylor"
 	@echo "... bgv_test"
@@ -206,6 +288,12 @@ help:
 	@echo "... sin_taylor.o"
 	@echo "... sin_taylor.i"
 	@echo "... sin_taylor.s"
+	@echo "... sin_taylor_decomp.o"
+	@echo "... sin_taylor_decomp.i"
+	@echo "... sin_taylor_decomp.s"
+	@echo "... sin_taylor_plain.o"
+	@echo "... sin_taylor_plain.i"
+	@echo "... sin_taylor_plain.s"
 .PHONY : help
 
 

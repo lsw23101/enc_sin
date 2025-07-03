@@ -53,6 +53,8 @@ CMAKE_BINARY_DIR = /home/sangwon/enc_sin/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/sin_taylor_plain.dir/all
+all: CMakeFiles/sin_taylor_decomp.dir/all
 all: CMakeFiles/sin_taylor.dir/all
 all: CMakeFiles/bgv_test.dir/all
 
@@ -64,10 +66,66 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/sin_taylor_plain.dir/clean
+clean: CMakeFiles/sin_taylor_decomp.dir/clean
 clean: CMakeFiles/sin_taylor.dir/clean
 clean: CMakeFiles/bgv_test.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sin_taylor_plain.dir
+
+# All Build rule for target.
+CMakeFiles/sin_taylor_plain.dir/all:
+	$(MAKE) -f CMakeFiles/sin_taylor_plain.dir/build.make CMakeFiles/sin_taylor_plain.dir/depend
+	$(MAKE) -f CMakeFiles/sin_taylor_plain.dir/build.make CMakeFiles/sin_taylor_plain.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sangwon/enc_sin/build/CMakeFiles --progress-num=7,8 "Built target sin_taylor_plain"
+.PHONY : CMakeFiles/sin_taylor_plain.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sin_taylor_plain.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sangwon/enc_sin/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sin_taylor_plain.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sangwon/enc_sin/build/CMakeFiles 0
+.PHONY : CMakeFiles/sin_taylor_plain.dir/rule
+
+# Convenience name for target.
+sin_taylor_plain: CMakeFiles/sin_taylor_plain.dir/rule
+
+.PHONY : sin_taylor_plain
+
+# clean rule for target.
+CMakeFiles/sin_taylor_plain.dir/clean:
+	$(MAKE) -f CMakeFiles/sin_taylor_plain.dir/build.make CMakeFiles/sin_taylor_plain.dir/clean
+.PHONY : CMakeFiles/sin_taylor_plain.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sin_taylor_decomp.dir
+
+# All Build rule for target.
+CMakeFiles/sin_taylor_decomp.dir/all:
+	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/depend
+	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sangwon/enc_sin/build/CMakeFiles --progress-num=5,6 "Built target sin_taylor_decomp"
+.PHONY : CMakeFiles/sin_taylor_decomp.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sin_taylor_decomp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sangwon/enc_sin/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sin_taylor_decomp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sangwon/enc_sin/build/CMakeFiles 0
+.PHONY : CMakeFiles/sin_taylor_decomp.dir/rule
+
+# Convenience name for target.
+sin_taylor_decomp: CMakeFiles/sin_taylor_decomp.dir/rule
+
+.PHONY : sin_taylor_decomp
+
+# clean rule for target.
+CMakeFiles/sin_taylor_decomp.dir/clean:
+	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/clean
+.PHONY : CMakeFiles/sin_taylor_decomp.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/sin_taylor.dir
