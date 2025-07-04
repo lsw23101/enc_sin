@@ -71,6 +71,17 @@ target_link_libraries(bgv_test
 )
 target_compile_options(bgv_test PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
 
+# Polynomial multiplication test executable
+add_executable(polynomial_mult_test polynomial_mult_test.cpp)
+target_include_directories(polynomial_mult_test PUBLIC
+  ${OPENFHE_INCLUDE_DIRS}
+)
+target_link_libraries(polynomial_mult_test
+  ${OPENFHE_LINK_LIBRARIES}
+  OpenMP::OpenMP_CXX
+)
+target_compile_options(polynomial_mult_test PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
+
 # Sin HE executable
 add_executable(sin_taylor sin_taylor.cpp)
 target_include_directories(sin_taylor PUBLIC
@@ -112,6 +123,26 @@ target_link_libraries(sin_taylor_plain
   OpenMP::OpenMP_CXX
 )
 target_compile_options(sin_taylor_plain PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
+
+add_executable(sin_taylor_third sin_taylor_third.cpp)
+target_include_directories(sin_taylor_third PUBLIC
+  ${OPENFHE_INCLUDE_DIRS}
+)
+target_link_libraries(sin_taylor_third
+  ${OPENFHE_LINK_LIBRARIES}
+  OpenMP::OpenMP_CXX
+)
+target_compile_options(sin_taylor_third PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
+
+add_executable(slotwise_poly_mult_test slotwise_poly_mult_test.cpp)
+target_include_directories(slotwise_poly_mult_test PUBLIC
+  ${OPENFHE_INCLUDE_DIRS}
+)
+target_link_libraries(slotwise_poly_mult_test
+  ${OPENFHE_LINK_LIBRARIES}
+  OpenMP::OpenMP_CXX
+)
+target_compile_options(slotwise_poly_mult_test PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
 
 if(BUILD_STATIC)
     set( CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")

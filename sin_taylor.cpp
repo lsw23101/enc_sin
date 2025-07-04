@@ -28,8 +28,9 @@ int main() {
     // ====== 암호화 파라미터 설정 ======
     CCParams<CryptoContextBGVRNS> parameters;
     parameters.SetPlaintextModulus(PlaintextModulus);
-    parameters.SetMultiplicativeDepth(5);
+    parameters.SetMultiplicativeDepth(4);
     parameters.SetSecurityLevel(SecurityLevel::HEStd_NotSet);
+    // parameters.SetSecurityLevel(SecurityLevel::HEStd_128_classic);
     parameters.SetRingDim(8192);
 
     auto cc = GenCryptoContext(parameters);

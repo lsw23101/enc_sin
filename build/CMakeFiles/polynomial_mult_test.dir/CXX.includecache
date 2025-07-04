@@ -6,17 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/sangwon/enc_sin/sin_taylor_decomp.cpp
+/home/sangwon/enc_sin/polynomial_mult_test.cpp
 openfhe/pke/openfhe.h
+-
+chrono
+-
+iomanip
 -
 iostream
 -
 vector
--
-cmath
--
-iomanip
--
-chrono
 -
 

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/sangwon/enc_sin/sin_taylor_decomp.cpp
+/home/sangwon/enc_sin/sin_taylor_third.cpp
 openfhe/pke/openfhe.h
 -
 iostream
