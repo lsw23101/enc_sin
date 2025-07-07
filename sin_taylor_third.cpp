@@ -28,7 +28,7 @@ int main() {
     // ====== 암호화 파라미터 설정 ======
     CCParams<CryptoContextBGVRNS> parameters;
     parameters.SetPlaintextModulus(PlaintextModulus);
-    parameters.SetMultiplicativeDepth(4);
+    parameters.SetMultiplicativeDepth(3);
     // parameters.SetSecurityLevel(SecurityLevel::HEStd_NotSet);
     parameters.SetSecurityLevel(SecurityLevel::HEStd_128_classic);
     parameters.SetRingDim(16384);
