@@ -21,12 +21,20 @@ int main() {
     int64_t ic3 = static_cast<int64_t>(std::round(c3 * denom * std::pow(s,2)));
     int64_t ic5 = static_cast<int64_t>(std::round(c5 * denom));
 
+    std::cout << "=== 5차 근사 파라미터 정보 ===" << std::endl;
+    std::cout << "PlaintextModulus: " << PlaintextModulus << " (약 " << std::log2(PlaintextModulus) << " 비트)" << std::endl;
+    std::cout << "ic1: " << ic1 << std::endl;
+    std::cout << "ic3: " << ic3 << std::endl;
+    std::cout << "ic5: " << ic5 << std::endl;
+    std::cout << "PlaintextModulus/2: " << PlaintextModulus/2 << std::endl;
+    std::cout << "===============================" << std::endl;
+
     // ====== 암호화 파라미터 설정 ======
     CCParams<CryptoContextBGVRNS> parameters;
     parameters.SetPlaintextModulus(PlaintextModulus);
     parameters.SetMultiplicativeDepth(6); // 5차 근사이므로 더 높은 뎁스 필요
     parameters.SetSecurityLevel(SecurityLevel::HEStd_NotSet);
-    parameters.SetRingDim(8192); // 더 큰 링 차원
+    parameters.SetRingDim(8192); // 링 차원을 줄여서 모듈러스 크기 문제 해결
 
     auto cc = GenCryptoContext(parameters);
     cc->Enable(PKE);
@@ -37,7 +45,7 @@ int main() {
     cc->EvalMultKeyGen(keyPair.secretKey);
 
     std::cout << std::fixed << std::setprecision(6);
-    std::cout << "각도(도)\tx_input(rad)\t근사값\t실제값\t오차\t암호화(ms)\t연산(ms)\t복호화(ms)\t총시간(ms)" << std::endl;
+    std::cout << "각도(도)\tx_input(rad)\t근사값\t실제값\t오차\tterm1_raw\tterm2_raw\tterm3_raw\tterm1_mod\tterm2_mod\tterm3_mod\t암호화(ms)\t연산(ms)\t복호화(ms)\t총시간(ms)" << std::endl;
 
     for (int deg = -180; deg <= 180; deg += 10) {
         double x_input = deg * M_PI / 180.0;
@@ -78,9 +86,12 @@ int main() {
         auto end_total = std::chrono::high_resolution_clock::now();
 
         // ====== 결과 계산 ======
-        int64_t t1 = p_term1->GetPackedValue()[0];
-        int64_t t2 = p_term2->GetPackedValue()[0];
-        int64_t t3 = p_term3->GetPackedValue()[0];
+        int64_t t1_raw = p_term1->GetPackedValue()[0];
+        int64_t t2_raw = p_term2->GetPackedValue()[0];
+        int64_t t3_raw = p_term3->GetPackedValue()[0];
+        int64_t t1 = t1_raw;
+        int64_t t2 = t2_raw;
+        int64_t t3 = t3_raw;
         if (t1 > PlaintextModulus/2) t1 -= PlaintextModulus;
         if (t2 > PlaintextModulus/2) t2 -= PlaintextModulus;
         if (t3 > PlaintextModulus/2) t3 -= PlaintextModulus;
@@ -99,6 +110,7 @@ int main() {
         auto total_time = std::chrono::duration_cast<std::chrono::microseconds>(end_total - start_total).count() / 1000.0;
 
         std::cout << deg << "\t" << x_input << "\t" << y_recovered << "\t" << y_true << "\t" << error 
+                  << "\t" << t1_raw << "\t" << t2_raw << "\t" << t3_raw << "\t" << t1 << "\t" << t2 << "\t" << t3
                   << "\t" << std::fixed << std::setprecision(2) << encrypt_time 
                   << "\t" << compute_time 
                   << "\t" << decrypt_time 
