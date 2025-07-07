@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named slotwise_poly_mult_test
+# Target rules for targets named sin_taylor_fifth
 
 # Build rule for target.
-slotwise_poly_mult_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 slotwise_poly_mult_test
-.PHONY : slotwise_poly_mult_test
+sin_taylor_fifth: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sin_taylor_fifth
+.PHONY : sin_taylor_fifth
 
 # fast build rule for target.
-slotwise_poly_mult_test/fast:
-	$(MAKE) -f CMakeFiles/slotwise_poly_mult_test.dir/build.make CMakeFiles/slotwise_poly_mult_test.dir/build
-.PHONY : slotwise_poly_mult_test/fast
+sin_taylor_fifth/fast:
+	$(MAKE) -f CMakeFiles/sin_taylor_fifth.dir/build.make CMakeFiles/sin_taylor_fifth.dir/build
+.PHONY : sin_taylor_fifth/fast
 
 #=============================================================================
 # Target rules for targets named sin_taylor_plain
@@ -135,32 +135,6 @@ sin_taylor_plain: cmake_check_build_system
 sin_taylor_plain/fast:
 	$(MAKE) -f CMakeFiles/sin_taylor_plain.dir/build.make CMakeFiles/sin_taylor_plain.dir/build
 .PHONY : sin_taylor_plain/fast
-
-#=============================================================================
-# Target rules for targets named sin_taylor_decomp
-
-# Build rule for target.
-sin_taylor_decomp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sin_taylor_decomp
-.PHONY : sin_taylor_decomp
-
-# fast build rule for target.
-sin_taylor_decomp/fast:
-	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/build
-.PHONY : sin_taylor_decomp/fast
-
-#=============================================================================
-# Target rules for targets named sin_taylor
-
-# Build rule for target.
-sin_taylor: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sin_taylor
-.PHONY : sin_taylor
-
-# fast build rule for target.
-sin_taylor/fast:
-	$(MAKE) -f CMakeFiles/sin_taylor.dir/build.make CMakeFiles/sin_taylor.dir/build
-.PHONY : sin_taylor/fast
 
 #=============================================================================
 # Target rules for targets named sin_taylor_third
@@ -255,59 +229,32 @@ polynomial_mult_test.cpp.s:
 	$(MAKE) -f CMakeFiles/polynomial_mult_test.dir/build.make CMakeFiles/polynomial_mult_test.dir/polynomial_mult_test.cpp.s
 .PHONY : polynomial_mult_test.cpp.s
 
-sin_taylor.o: sin_taylor.cpp.o
+sin_taylor_fifth.o: sin_taylor_fifth.cpp.o
 
-.PHONY : sin_taylor.o
-
-# target to build an object file
-sin_taylor.cpp.o:
-	$(MAKE) -f CMakeFiles/sin_taylor.dir/build.make CMakeFiles/sin_taylor.dir/sin_taylor.cpp.o
-.PHONY : sin_taylor.cpp.o
-
-sin_taylor.i: sin_taylor.cpp.i
-
-.PHONY : sin_taylor.i
-
-# target to preprocess a source file
-sin_taylor.cpp.i:
-	$(MAKE) -f CMakeFiles/sin_taylor.dir/build.make CMakeFiles/sin_taylor.dir/sin_taylor.cpp.i
-.PHONY : sin_taylor.cpp.i
-
-sin_taylor.s: sin_taylor.cpp.s
-
-.PHONY : sin_taylor.s
-
-# target to generate assembly for a file
-sin_taylor.cpp.s:
-	$(MAKE) -f CMakeFiles/sin_taylor.dir/build.make CMakeFiles/sin_taylor.dir/sin_taylor.cpp.s
-.PHONY : sin_taylor.cpp.s
-
-sin_taylor_decomp.o: sin_taylor_decomp.cpp.o
-
-.PHONY : sin_taylor_decomp.o
+.PHONY : sin_taylor_fifth.o
 
 # target to build an object file
-sin_taylor_decomp.cpp.o:
-	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/sin_taylor_decomp.cpp.o
-.PHONY : sin_taylor_decomp.cpp.o
+sin_taylor_fifth.cpp.o:
+	$(MAKE) -f CMakeFiles/sin_taylor_fifth.dir/build.make CMakeFiles/sin_taylor_fifth.dir/sin_taylor_fifth.cpp.o
+.PHONY : sin_taylor_fifth.cpp.o
 
-sin_taylor_decomp.i: sin_taylor_decomp.cpp.i
+sin_taylor_fifth.i: sin_taylor_fifth.cpp.i
 
-.PHONY : sin_taylor_decomp.i
+.PHONY : sin_taylor_fifth.i
 
 # target to preprocess a source file
-sin_taylor_decomp.cpp.i:
-	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/sin_taylor_decomp.cpp.i
-.PHONY : sin_taylor_decomp.cpp.i
+sin_taylor_fifth.cpp.i:
+	$(MAKE) -f CMakeFiles/sin_taylor_fifth.dir/build.make CMakeFiles/sin_taylor_fifth.dir/sin_taylor_fifth.cpp.i
+.PHONY : sin_taylor_fifth.cpp.i
 
-sin_taylor_decomp.s: sin_taylor_decomp.cpp.s
+sin_taylor_fifth.s: sin_taylor_fifth.cpp.s
 
-.PHONY : sin_taylor_decomp.s
+.PHONY : sin_taylor_fifth.s
 
 # target to generate assembly for a file
-sin_taylor_decomp.cpp.s:
-	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/sin_taylor_decomp.cpp.s
-.PHONY : sin_taylor_decomp.cpp.s
+sin_taylor_fifth.cpp.s:
+	$(MAKE) -f CMakeFiles/sin_taylor_fifth.dir/build.make CMakeFiles/sin_taylor_fifth.dir/sin_taylor_fifth.cpp.s
+.PHONY : sin_taylor_fifth.cpp.s
 
 sin_taylor_plain.o: sin_taylor_plain.cpp.o
 
@@ -363,33 +310,6 @@ sin_taylor_third.cpp.s:
 	$(MAKE) -f CMakeFiles/sin_taylor_third.dir/build.make CMakeFiles/sin_taylor_third.dir/sin_taylor_third.cpp.s
 .PHONY : sin_taylor_third.cpp.s
 
-slotwise_poly_mult_test.o: slotwise_poly_mult_test.cpp.o
-
-.PHONY : slotwise_poly_mult_test.o
-
-# target to build an object file
-slotwise_poly_mult_test.cpp.o:
-	$(MAKE) -f CMakeFiles/slotwise_poly_mult_test.dir/build.make CMakeFiles/slotwise_poly_mult_test.dir/slotwise_poly_mult_test.cpp.o
-.PHONY : slotwise_poly_mult_test.cpp.o
-
-slotwise_poly_mult_test.i: slotwise_poly_mult_test.cpp.i
-
-.PHONY : slotwise_poly_mult_test.i
-
-# target to preprocess a source file
-slotwise_poly_mult_test.cpp.i:
-	$(MAKE) -f CMakeFiles/slotwise_poly_mult_test.dir/build.make CMakeFiles/slotwise_poly_mult_test.dir/slotwise_poly_mult_test.cpp.i
-.PHONY : slotwise_poly_mult_test.cpp.i
-
-slotwise_poly_mult_test.s: slotwise_poly_mult_test.cpp.s
-
-.PHONY : slotwise_poly_mult_test.s
-
-# target to generate assembly for a file
-slotwise_poly_mult_test.cpp.s:
-	$(MAKE) -f CMakeFiles/slotwise_poly_mult_test.dir/build.make CMakeFiles/slotwise_poly_mult_test.dir/slotwise_poly_mult_test.cpp.s
-.PHONY : slotwise_poly_mult_test.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -397,11 +317,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... slotwise_poly_mult_test"
-	@echo "... sin_taylor_plain"
-	@echo "... sin_taylor_decomp"
 	@echo "... edit_cache"
-	@echo "... sin_taylor"
+	@echo "... sin_taylor_fifth"
+	@echo "... sin_taylor_plain"
 	@echo "... sin_taylor_third"
 	@echo "... polynomial_mult_test"
 	@echo "... bgv_test"
@@ -411,21 +329,15 @@ help:
 	@echo "... polynomial_mult_test.o"
 	@echo "... polynomial_mult_test.i"
 	@echo "... polynomial_mult_test.s"
-	@echo "... sin_taylor.o"
-	@echo "... sin_taylor.i"
-	@echo "... sin_taylor.s"
-	@echo "... sin_taylor_decomp.o"
-	@echo "... sin_taylor_decomp.i"
-	@echo "... sin_taylor_decomp.s"
+	@echo "... sin_taylor_fifth.o"
+	@echo "... sin_taylor_fifth.i"
+	@echo "... sin_taylor_fifth.s"
 	@echo "... sin_taylor_plain.o"
 	@echo "... sin_taylor_plain.i"
 	@echo "... sin_taylor_plain.s"
 	@echo "... sin_taylor_third.o"
 	@echo "... sin_taylor_third.i"
 	@echo "... sin_taylor_third.s"
-	@echo "... slotwise_poly_mult_test.o"
-	@echo "... slotwise_poly_mult_test.i"
-	@echo "... slotwise_poly_mult_test.s"
 .PHONY : help
 
 

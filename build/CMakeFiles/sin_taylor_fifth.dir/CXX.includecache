@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sangwon/enc_sin/sin_taylor_fifth.cpp
+openfhe/pke/openfhe.h
+-
+iostream
+-
+vector
+-
+cmath
+-
+iomanip
+-
+chrono
+-
+

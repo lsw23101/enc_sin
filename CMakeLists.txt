@@ -82,38 +82,7 @@ target_link_libraries(polynomial_mult_test
 )
 target_compile_options(polynomial_mult_test PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
 
-# Sin HE executable
-add_executable(sin_taylor sin_taylor.cpp)
-target_include_directories(sin_taylor PUBLIC
-  ${OPENFHE_INCLUDE_DIRS}
-)
-target_link_libraries(sin_taylor
-  ${OPENFHE_LINK_LIBRARIES}
-  OpenMP::OpenMP_CXX
-)
-target_compile_options(sin_taylor PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
-
-# Sin Euler executable
-# add_executable(sin_euler sin_euler.cpp)
-# target_include_directories(sin_euler PUBLIC
-#   ${OPENFHE_INCLUDE_DIRS}
-# )
-# target_link_libraries(sin_euler
-#   ${OPENFHE_LINK_LIBRARIES}
-#   OpenMP::OpenMP_CXX
-# )
-# target_compile_options(sin_euler PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
-
-add_executable(sin_taylor_decomp sin_taylor_decomp.cpp)
-target_include_directories(sin_taylor_decomp PUBLIC
-  ${OPENFHE_INCLUDE_DIRS}
-)
-target_link_libraries(sin_taylor_decomp
-  ${OPENFHE_LINK_LIBRARIES}
-  OpenMP::OpenMP_CXX
-)
-target_compile_options(sin_taylor_decomp PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
-
+# Sin Taylor Plain executable
 add_executable(sin_taylor_plain sin_taylor_plain.cpp)
 target_include_directories(sin_taylor_plain PUBLIC
   ${OPENFHE_INCLUDE_DIRS}
@@ -124,6 +93,7 @@ target_link_libraries(sin_taylor_plain
 )
 target_compile_options(sin_taylor_plain PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
 
+# Sin Taylor Third executable
 add_executable(sin_taylor_third sin_taylor_third.cpp)
 target_include_directories(sin_taylor_third PUBLIC
   ${OPENFHE_INCLUDE_DIRS}
@@ -134,15 +104,16 @@ target_link_libraries(sin_taylor_third
 )
 target_compile_options(sin_taylor_third PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
 
-add_executable(slotwise_poly_mult_test slotwise_poly_mult_test.cpp)
-target_include_directories(slotwise_poly_mult_test PUBLIC
+# Sin Taylor Fifth executable
+add_executable(sin_taylor_fifth sin_taylor_fifth.cpp)
+target_include_directories(sin_taylor_fifth PUBLIC
   ${OPENFHE_INCLUDE_DIRS}
 )
-target_link_libraries(slotwise_poly_mult_test
+target_link_libraries(sin_taylor_fifth
   ${OPENFHE_LINK_LIBRARIES}
   OpenMP::OpenMP_CXX
 )
-target_compile_options(slotwise_poly_mult_test PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
+target_compile_options(sin_taylor_fifth PRIVATE -fopenmp ${OPENFHE_COMPILE_OPTIONS})
 
 if(BUILD_STATIC)
     set( CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")

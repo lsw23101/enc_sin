@@ -53,10 +53,8 @@ CMAKE_BINARY_DIR = /home/sangwon/enc_sin/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/slotwise_poly_mult_test.dir/all
+all: CMakeFiles/sin_taylor_fifth.dir/all
 all: CMakeFiles/sin_taylor_plain.dir/all
-all: CMakeFiles/sin_taylor_decomp.dir/all
-all: CMakeFiles/sin_taylor.dir/all
 all: CMakeFiles/sin_taylor_third.dir/all
 all: CMakeFiles/polynomial_mult_test.dir/all
 all: CMakeFiles/bgv_test.dir/all
@@ -69,10 +67,8 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/slotwise_poly_mult_test.dir/clean
+clean: CMakeFiles/sin_taylor_fifth.dir/clean
 clean: CMakeFiles/sin_taylor_plain.dir/clean
-clean: CMakeFiles/sin_taylor_decomp.dir/clean
-clean: CMakeFiles/sin_taylor.dir/clean
 clean: CMakeFiles/sin_taylor_third.dir/clean
 clean: CMakeFiles/polynomial_mult_test.dir/clean
 clean: CMakeFiles/bgv_test.dir/clean
@@ -80,31 +76,31 @@ clean: CMakeFiles/bgv_test.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/slotwise_poly_mult_test.dir
+# Target rules for target CMakeFiles/sin_taylor_fifth.dir
 
 # All Build rule for target.
-CMakeFiles/slotwise_poly_mult_test.dir/all:
-	$(MAKE) -f CMakeFiles/slotwise_poly_mult_test.dir/build.make CMakeFiles/slotwise_poly_mult_test.dir/depend
-	$(MAKE) -f CMakeFiles/slotwise_poly_mult_test.dir/build.make CMakeFiles/slotwise_poly_mult_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sangwon/enc_sin/build/CMakeFiles --progress-num=13,14 "Built target slotwise_poly_mult_test"
-.PHONY : CMakeFiles/slotwise_poly_mult_test.dir/all
+CMakeFiles/sin_taylor_fifth.dir/all:
+	$(MAKE) -f CMakeFiles/sin_taylor_fifth.dir/build.make CMakeFiles/sin_taylor_fifth.dir/depend
+	$(MAKE) -f CMakeFiles/sin_taylor_fifth.dir/build.make CMakeFiles/sin_taylor_fifth.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sangwon/enc_sin/build/CMakeFiles --progress-num=5,6 "Built target sin_taylor_fifth"
+.PHONY : CMakeFiles/sin_taylor_fifth.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/slotwise_poly_mult_test.dir/rule: cmake_check_build_system
+CMakeFiles/sin_taylor_fifth.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sangwon/enc_sin/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/slotwise_poly_mult_test.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sin_taylor_fifth.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sangwon/enc_sin/build/CMakeFiles 0
-.PHONY : CMakeFiles/slotwise_poly_mult_test.dir/rule
+.PHONY : CMakeFiles/sin_taylor_fifth.dir/rule
 
 # Convenience name for target.
-slotwise_poly_mult_test: CMakeFiles/slotwise_poly_mult_test.dir/rule
+sin_taylor_fifth: CMakeFiles/sin_taylor_fifth.dir/rule
 
-.PHONY : slotwise_poly_mult_test
+.PHONY : sin_taylor_fifth
 
 # clean rule for target.
-CMakeFiles/slotwise_poly_mult_test.dir/clean:
-	$(MAKE) -f CMakeFiles/slotwise_poly_mult_test.dir/build.make CMakeFiles/slotwise_poly_mult_test.dir/clean
-.PHONY : CMakeFiles/slotwise_poly_mult_test.dir/clean
+CMakeFiles/sin_taylor_fifth.dir/clean:
+	$(MAKE) -f CMakeFiles/sin_taylor_fifth.dir/build.make CMakeFiles/sin_taylor_fifth.dir/clean
+.PHONY : CMakeFiles/sin_taylor_fifth.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/sin_taylor_plain.dir
@@ -113,7 +109,7 @@ CMakeFiles/slotwise_poly_mult_test.dir/clean:
 CMakeFiles/sin_taylor_plain.dir/all:
 	$(MAKE) -f CMakeFiles/sin_taylor_plain.dir/build.make CMakeFiles/sin_taylor_plain.dir/depend
 	$(MAKE) -f CMakeFiles/sin_taylor_plain.dir/build.make CMakeFiles/sin_taylor_plain.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sangwon/enc_sin/build/CMakeFiles --progress-num=9,10 "Built target sin_taylor_plain"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sangwon/enc_sin/build/CMakeFiles --progress-num=7,8 "Built target sin_taylor_plain"
 .PHONY : CMakeFiles/sin_taylor_plain.dir/all
 
 # Build rule for subdir invocation for target.
@@ -134,67 +130,13 @@ CMakeFiles/sin_taylor_plain.dir/clean:
 .PHONY : CMakeFiles/sin_taylor_plain.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/sin_taylor_decomp.dir
-
-# All Build rule for target.
-CMakeFiles/sin_taylor_decomp.dir/all:
-	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/depend
-	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sangwon/enc_sin/build/CMakeFiles --progress-num=7,8 "Built target sin_taylor_decomp"
-.PHONY : CMakeFiles/sin_taylor_decomp.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/sin_taylor_decomp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sangwon/enc_sin/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sin_taylor_decomp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sangwon/enc_sin/build/CMakeFiles 0
-.PHONY : CMakeFiles/sin_taylor_decomp.dir/rule
-
-# Convenience name for target.
-sin_taylor_decomp: CMakeFiles/sin_taylor_decomp.dir/rule
-
-.PHONY : sin_taylor_decomp
-
-# clean rule for target.
-CMakeFiles/sin_taylor_decomp.dir/clean:
-	$(MAKE) -f CMakeFiles/sin_taylor_decomp.dir/build.make CMakeFiles/sin_taylor_decomp.dir/clean
-.PHONY : CMakeFiles/sin_taylor_decomp.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/sin_taylor.dir
-
-# All Build rule for target.
-CMakeFiles/sin_taylor.dir/all:
-	$(MAKE) -f CMakeFiles/sin_taylor.dir/build.make CMakeFiles/sin_taylor.dir/depend
-	$(MAKE) -f CMakeFiles/sin_taylor.dir/build.make CMakeFiles/sin_taylor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sangwon/enc_sin/build/CMakeFiles --progress-num=5,6 "Built target sin_taylor"
-.PHONY : CMakeFiles/sin_taylor.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/sin_taylor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sangwon/enc_sin/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sin_taylor.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sangwon/enc_sin/build/CMakeFiles 0
-.PHONY : CMakeFiles/sin_taylor.dir/rule
-
-# Convenience name for target.
-sin_taylor: CMakeFiles/sin_taylor.dir/rule
-
-.PHONY : sin_taylor
-
-# clean rule for target.
-CMakeFiles/sin_taylor.dir/clean:
-	$(MAKE) -f CMakeFiles/sin_taylor.dir/build.make CMakeFiles/sin_taylor.dir/clean
-.PHONY : CMakeFiles/sin_taylor.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/sin_taylor_third.dir
 
 # All Build rule for target.
 CMakeFiles/sin_taylor_third.dir/all:
 	$(MAKE) -f CMakeFiles/sin_taylor_third.dir/build.make CMakeFiles/sin_taylor_third.dir/depend
 	$(MAKE) -f CMakeFiles/sin_taylor_third.dir/build.make CMakeFiles/sin_taylor_third.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sangwon/enc_sin/build/CMakeFiles --progress-num=11,12 "Built target sin_taylor_third"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/sangwon/enc_sin/build/CMakeFiles --progress-num=9,10 "Built target sin_taylor_third"
 .PHONY : CMakeFiles/sin_taylor_third.dir/all
 
 # Build rule for subdir invocation for target.

@@ -1,9 +1,7 @@
 /home/sangwon/enc_sin/build/CMakeFiles/rebuild_cache.dir
-/home/sangwon/enc_sin/build/CMakeFiles/slotwise_poly_mult_test.dir
-/home/sangwon/enc_sin/build/CMakeFiles/sin_taylor_plain.dir
-/home/sangwon/enc_sin/build/CMakeFiles/sin_taylor_decomp.dir
 /home/sangwon/enc_sin/build/CMakeFiles/edit_cache.dir
-/home/sangwon/enc_sin/build/CMakeFiles/sin_taylor.dir
+/home/sangwon/enc_sin/build/CMakeFiles/sin_taylor_fifth.dir
+/home/sangwon/enc_sin/build/CMakeFiles/sin_taylor_plain.dir
 /home/sangwon/enc_sin/build/CMakeFiles/sin_taylor_third.dir
 /home/sangwon/enc_sin/build/CMakeFiles/polynomial_mult_test.dir
 /home/sangwon/enc_sin/build/CMakeFiles/bgv_test.dir
