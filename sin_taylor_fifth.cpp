@@ -11,7 +11,7 @@ int main() {
     // ====== 파라미터 ======
     const int64_t s = 50;         // 스케일링 상수
     const int64_t denom = 120;     // 정수화 분모
-    const int64_t PlaintextModulus = 1099512004609; // 큰 NTT-friendly 소수 (약 40비트)
+    const int64_t PlaintextModulus = 593779228673; // 큰 NTT-friendly 소수 (약 40비트)
 
     // ====== 테일러 계수 (정수화) ======
     const double c1 = 1.0;
@@ -32,9 +32,9 @@ int main() {
     // ====== 암호화 파라미터 설정 ======
     CCParams<CryptoContextBGVRNS> parameters;
     parameters.SetPlaintextModulus(PlaintextModulus);
-    parameters.SetMultiplicativeDepth(6); // 5차 근사이므로 더 높은 뎁스 필요
+    parameters.SetMultiplicativeDepth(5); // 5차 근사이므로 더 높은 뎁스 필요
     parameters.SetSecurityLevel(SecurityLevel::HEStd_NotSet);
-    parameters.SetRingDim(8192); // 링 차원을 줄여서 모듈러스 크기 문제 해결
+    parameters.SetRingDim(16384); // 링 차원을 줄여서 모듈러스 크기 문제 해결
 
     auto cc = GenCryptoContext(parameters);
     cc->Enable(PKE);
