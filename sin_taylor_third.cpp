@@ -11,8 +11,7 @@ int main() {
     // ====== 파라미터 ======
     const int64_t s = 50;         // 스케일링 상수 지금은 0.2 만큼의 해상도
     const int64_t denom = 6;     // 정수화 분모
-    const int64_t PlaintextModulus = 536903681; // 더 작은 NTT-friendly 소수 (약 29비트)
-
+    const int64_t PlaintextModulus = 7340033; // NTT-friendly 소수 (2^28 + 27)
     // ====== 테일러 계수 (정수화) ======
     const double c1 = 1.0;
     const double c3 = -1.0/6.0;
